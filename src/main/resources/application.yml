@@ -1,0 +1,15 @@
+spring:
+  ai:
+    openai:
+      api-key: ${GROQ_API_KEY}
+      base-url: https://api.groq.com/openai
+
+server:
+  port: 8080
+
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    org.springframework.ai.openai: DEBUG
+    com.springai: DEBUG
