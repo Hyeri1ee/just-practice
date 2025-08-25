@@ -9,8 +9,13 @@ spring:
 
   data:
     mongodb:
-      uri: ${MONGODB_URI}  # ex: mongodb://username:password@localhost:27017/dbname
-      database: pr_database
+      uri: ${MONGODB_URI}
+      database: meetnow_PR
+
+github:
+  token: ${GITHUB_TOKEN}
+  org: "TimeTogether"
+  repo: ${GITHUB_REPO}
 
 qdrant:
   base-url: "http://localhost:6333"
