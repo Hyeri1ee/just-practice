@@ -1,8 +1,21 @@
 spring:
   ai:
     openai:
-      api-key: ${GROQ_API_KEY}
+      api-key: ${OPENAI_API_KEY}     # OpenAI 임베딩 전용
+      base-url: https://api.openai.com/v1
+    groq:
+      api-key: ${GROQ_API_KEY}       # Groq LLM 전용
       base-url: https://api.groq.com/openai
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}  # ex: mongodb://username:password@localhost:27017/dbname
+      database: pr_database
+
+qdrant:
+  base-url: "http://localhost:6333"
+  collection-name: "pr_collection"
+  vector-size: 1536
 
 server:
   port: 8080
@@ -13,3 +26,4 @@ logging:
     org.springframework.ai: DEBUG
     org.springframework.ai.openai: DEBUG
     com.springai: DEBUG
+    org.springframework.data.mongodb: DEBUG

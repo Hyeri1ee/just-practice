@@ -20,6 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ChatService {
 
     private final OpenAiChatModel chatModel;
+    //private final OpenAiChatOptions chatOptions; // 주입받아도 됨
 
     public ChatResponse openAiChat(String userInput, String systemMessage, String model) {
         log.debug("Groq 챗 호출 시작 - 모델: {}", model);
@@ -43,6 +44,7 @@ public class ChatService {
 
             // 프롬프트 생성
             Prompt prompt = new Prompt(messages, chatOptions);
+            //Prompt prompt = new Prompt(messages, chatOptions); 주입 받는 경우 요거만 만들어도 됨.
 
             return chatModel.call(prompt);
 

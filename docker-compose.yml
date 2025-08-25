@@ -1,0 +1,10 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./qdrant_storage:/qdrant/storage  #로컬에 데이터 영구 저장 (옵션)
+    restart: unless-stopped

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Primary;
 @Slf4j
 public class GroqConfig {
 
-    @Value("${GROQ_API_KEY:}")
+    @Value("${spring.ai.groq.api-key}")
     private String groqApiKey;
 
     @Bean
